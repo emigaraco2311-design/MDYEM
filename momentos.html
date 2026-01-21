@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestros momentos</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- ESTILO EXTRA SOLO PARA EL SECRETO -->
+  <style>
+    .momento-secreto {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .momento-secreto img {
+      filter: blur(25px) brightness(0.2);
+      transition: filter 0.4s ease;
+    }
+
+    .secreto-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .secreto-overlay small {
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Botón música -->
+  <button class="btn-musica" onclick="toggleMusica()">🎵</button>
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/momentos.mp3" loop></audio>
+
+  <div class="historia-container">
+    <h1>Nuestros momentos</h1>
+
+    <div class="momentos-grid">
+
+      <div class="momento">
+        <img src="imagenes/momento1.jpg">
+        <p>baile y rifa pipipi</p>
+      </div>
+
+      <div class="momento">
+        <img src="imagenes/momento2.jpg">
+        <p>:)</p>
+      </div>
+
+      <div class="momento">
+        <img src="imagenes/momento3.jpg">
+        <p>mucho bailar(me encanto)</p>
+      </div>
+
+      <div class="momento">
+        <img src="imagenes/momento4.jpg">
+        <p>que se repita jsjsjs</p>
+      </div>
+
+
+      <!-- 🔒 MOMENTO SECRETO BIEN OCULTO -->
+      <div class="momento momento-secreto" onclick="verSecreto()">
+        <img id="foto-secreta" src="imagenes/secreto.jpg">
+        <div class="secreto-overlay">
+          🔒 Momento privado  
+          <small>Contraseña requerida</small>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="btn-volver">← Volver al menú</a>
+  </div>
+
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      sonando ? musica.pause() : musica.play();
+      sonando = !sonando;
+    }
+
+    function verSecreto() {
+      const clave = prompt("Contraseña:");
+
+      // 🔐 CAMBIA AQUÍ
+      if (clave === "amore") {
+        document.getElementById("foto-secreta").style.filter = "none";
+        document.querySelector(".secreto-overlay").style.display = "none";
+      } else {
+        alert("Contraseña incorrecta 😅");
+      }
+    }
+  </script>
+
+</body>
+</html>
