@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <!-- Botón música -->
+  <button class="btn-musica" onclick="toggleMusica()">🎵</button>
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/final.mp3" loop></audio>
+
+  <div class="historia-container">
+    <h1>Y esto no es un final…</h1>
+
+    <div class="texto-final">
+      <p>
+        Si llegaste hasta aquí,
+        gracias por leerme,
+        por sentir,
+        por estar.<br><br>
+
+        Esta página no es solo código,
+        es tiempo,
+        recuerdos,
+        risas,
+        y un poquito de todo lo que siento por ti.<br><br>
+
+        No sé qué venga después,
+        pero sé que quiero seguir escribiendo
+        la historia contigo,
+        sin prisas,
+        sin miedo,
+        a nuestra manera.<br><br>
+
+        Te quiero,  
+        <strong>amore</strong> 💖
+      </p>
+    </div>
+
+    <div class="despedida">
+      <p>
+        Gracias por ser tú.<br>
+        Gracias por llegar.<br>
+        Gracias por quedarte.
+      </p>
+    </div>
+
+    <a href="index.html" class="btn-volver">← Volver a empezar</a>
+  </div>
+
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      sonando ? musica.pause() : musica.play();
+      sonando = !sonando;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestra historia</title>
+
+  <!-- Fuentes bonitas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/historia.mp3" loop></audio>
+
+  <!-- Contenedor -->
+  <div class="historia-container">
+    <h1>Cómo empezó todo</h1>
+
+    <p>
+      Nuestra historia empezó de una forma inesperada: por unos anillos.
+      Yo tenía anillos que quería vender y Mytzy vendía anillos,
+      así que el destino hizo lo suyo y ahí fue donde todo comenzó.
+    </p>
+
+    <p>
+      Después le pedí ayuda para hacer un cuadro que, en teoría,
+      era para dárselo a una ex… pero nunca lo di.
+      Tal vez porque, sin darme cuenta, tú ya empezabas a importar más.
+    </p>
+
+    <p>
+      Entre pláticas, risas y momentos compartidos,
+      poco a poco me fui enamorando.
+      Llevamos cuatro meses de conocernos y uno de novios,
+      pero lo que hemos vivido se siente más grande que el tiempo.
+    </p>
+
+    <p class="destacado">
+      Eres divertida, llena de energía, friki en el mejor sentido,
+      increíblemente linda… por eso siempre te digo
+      <strong>amore</strong>.
+    </p>
+
+    <p>
+      Nuestra historia no empezó como en las películas,
+      pero empezó como las mejores:
+      real, inesperada y sincera.
+      Y esto apenas es el comienzo ❤️
+    </p>
+
+    <a href="index.html" class="btn-volver">← Volver al menú</a>
+  </div>
+
+  <!-- Script música -->
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      if (sonando) {
+        musica.pause();
+      } else {
+        musica.play();
+      }
+      sonando = !sonando;
+    }
+  </script>
+
+</body>
+</html>

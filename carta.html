@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi carta para ti</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- ESTILO EXTRA PARA CARTA SECRETA -->
+  <style>
+    .carta-secreta {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .contenido-carta {
+      filter: blur(25px) brightness(0.2);
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      transition: filter 0.4s ease;
+    }
+
+    .carta-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 16px;
+    }
+
+    .carta-overlay small {
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Botón música -->
+  <button class="btn-musica" onclick="toggleMusica()">🎵</button>
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/carta.mp3" loop></audio>
+
+  <div class="historia-container">
+    <h1>Una carta para ti</h1>
+
+    <!-- 🔒 CARTA SECRETA -->
+    <div class="carta-secreta" onclick="verCarta()">
+
+      <div id="texto-carta" class="contenido-carta">
+        <p>
+          Amore,<br><br>
+
+          Desde que llegaste a mi vida, todo empezó a sentirse distinto.
+          No fue de golpe, fue poco a poco… como cuando algo bonito
+          se va acomodando sin avisar.<br><br>
+
+          Me encanta tu forma de ser, tus risas, tus burlas, como bailas, como pintas, como te preocupas por los demas
+          esta carta no es mucho pero es lo mas sincera posible, esta cancion por lo que se trata 
+          de dejar algo atras pero con esta carta no te quiero decir que dejes algo atras sino que aceptes algo 
+          en el futuro, dejando en el pasado lo malo pero estando consciente de este, estare para ti cuando 
+          llores a moco tendido jsjjs,
+         <br><br>
+
+          Gracias por estar, por reír, por bailar raro conmigo,
+          por ser tú
+          y cómo sin darte cuenta haces que mis días sean más ligeros
+          Esta carta es solo un pedacito de todo lo que siento por ti 
+        </p>
+      </div>
+
+      <div class="carta-overlay">
+        🔒 Carta privada  
+        <small>Solo para quien sabe la contraseña</small>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="btn-volver">← Volver al menú</a>
+  </div>
+
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      sonando ? musica.pause() : musica.play();
+      sonando = !sonando;
+    }
+
+    function verCarta() {
+      const clave = prompt("Contraseña:");
+
+      // 🔐 CAMBIA AQUÍ
+      if (clave === "amore") {
+        document.getElementById("texto-carta").style.filter = "none";
+        document.querySelector(".carta-overlay").style.display = "none";
+      } else {
+        alert("Esa no es 😅");
+      }
+    }
+  </script>
+
+</body>
+</html>

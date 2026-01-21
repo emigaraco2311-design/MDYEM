@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestro futuro</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Estilo extra para bloque privado -->
+  <style>
+    .futuro-privado {
+      position: relative;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+
+    .futuro-privado .contenido {
+      filter: blur(25px) brightness(0.2);
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      transition: filter 0.4s ease;
+    }
+
+    .futuro-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      border-radius: 16px;
+    }
+
+    .futuro-overlay small {
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Botón música -->
+  <button class="btn-musica" onclick="toggleMusica()">🎵</button>
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/futuro.mp3" loop></audio>
+
+  <div class="historia-container">
+    <h1>Nuestro futuro</h1>
+
+    <!-- 🌤️ PARTE PÚBLICA -->
+    <div class="texto-futuro">
+      <p>
+        No sé exactamente cómo será el futuro,  
+        pero sí sé algo:  
+        me gusta imaginarlo contigo.<br><br>
+
+        Con más risas, más momentos simples,
+        más recuerdos que todavía no existen,
+        pero que ya se sienten reales.<br><br>
+
+        Tal vez no todo sea perfecto,
+        pero quiero que sea real,
+        nuestro,
+        y lleno de amor.<br><br>
+        Tututuru max verstappen (perdon tenia q poner algo sjsjsjjsjsjs)
+      </p>
+    </div>
+
+    <!-- 🔒 PARTE PRIVADA -->
+    <div class="futuro-privado" onclick="verFuturoPrivado()">
+
+      <div id="futuro-secreto" class="contenido">
+        <p>
+          Me imagino despertando a tu lado,
+          planeando cosas pequeñas,
+          viajando,
+          apoyándonos incluso cuando cueste.<br><br>
+
+          Me imagino eligiéndote,
+          no solo hoy,
+          sino todos los días que vengan.<br><br>
+
+          Este futuro no lo ve cualquiera,
+          porque solo tú sabes lo que significa para mí <br><br> 
+
+          Un futuro en donde esten nuestros hijos y estemos tu y yo viejitos jsjsjs
+        </p>
+      </div>
+
+      <div class="futuro-overlay">
+        🔒 Parte privada  
+        <small>Solo para nosotros</small>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="btn-volver">← Volver al menú</a>
+  </div>
+
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      sonando ? musica.pause() : musica.play();
+      sonando = !sonando;
+    }
+
+    function verFuturoPrivado() {
+      const clave = prompt("Contraseña:");
+
+      // 🔐 CAMBIA AQUÍ
+      if (clave === "amore") {
+        document.getElementById("futuro-secreto").style.filter = "none";
+        document.querySelector(".futuro-overlay").style.display = "none";
+      } else {
+        alert("Aún no 👀");
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lo que amo de ti</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Botón música -->
+  <button class="btn-musica" onclick="toggleMusica()">🎵</button>
+
+  <!-- Audio -->
+  <audio id="musica" src="musica/amor.mp3" loop></audio>
+
+  <!-- Contenedor principal -->
+  <div class="historia-container">
+    <h1>Lo que amo de ti</h1>
+
+    <div class="tarjetas-amor">
+      <div class="tarjeta">Tu energía y la forma en que llenas todo cuando llegas ✨</div>
+      <div class="tarjeta">Que seas curiosa por todo</div>
+      <div class="tarjeta">Tu risa, porque siempre se me queda grabada</div>
+      <div class="tarjeta">Cómo haces que mis días sean más ligeros</div>
+      <div class="tarjeta">Tu forma tan bonita de ser tú misma</div>
+      <div class="tarjeta">Que ahora puedo llamarte <strong>amore</strong> 💖</div>
+      <div class="tarjeta">Tus ojos cafés hermosos (aunque digas que no)</div>
+
+      <!-- Tarjeta que se voltea -->
+      <div class="tarjeta-flip">
+        <div class="tarjeta-inner">
+          <div class="tarjeta-front">
+            El cómo bailas jsjsjsjs 😏
+            <small>(voltea la tarjeta)</small>
+          </div>
+          <div class="tarjeta-back">
+            Esta cancion es por esta tarjeta         bailas precioso 💃💖
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-volver">← Volver al menú</a>
+  </div>
+
+  <!-- Script música -->
+  <script>
+    const musica = document.getElementById("musica");
+    let sonando = false;
+
+    function toggleMusica() {
+      if (sonando) {
+        musica.pause();
+      } else {
+        musica.play();
+      }
+      sonando = !sonando;
+    }
+  </script>
+
+</body>
+</html>
