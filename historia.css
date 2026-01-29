@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fde2f3, #e0f2fe);
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 22px;
+  padding: 35px 30px 45px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: aparecer 0.6s ease;
+}
+
+/* ===== TÍTULOS ===== */
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 2.3rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* ===== MENÚ DE CAPÍTULOS ===== */
+
+.menu-capitulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.capitulo-card {
+  background: linear-gradient(135deg, #ff9ecf, #9ecfff);
+  border-radius: 18px;
+  padding: 18px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.capitulo-card:hover {
+  transform: scale(1.05);
+}
+
+/* ===== TEXTO HISTORIA ===== */
+
+.texto-historia {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #333;
+  text-align: justify;
+}
+
+.texto-historia p {
+  margin-bottom: 18px;
+}
+
+/* ===== BOTONES ===== */
+
+.botones {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff7ab6, #7ab6ff);
+  color: white;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BOTÓN MÚSICA ===== */
+
+.boton-musica {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  background: linear-gradient(135deg, #ff7ab6, #7ab6ff);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.boton-musica:hover {
+  transform: scale(1.1);
+}
+
+/* ===== ANIMACIÓN ===== */
+
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
